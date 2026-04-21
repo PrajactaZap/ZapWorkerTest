@@ -1,0 +1,12 @@
+node_modules/
+allure-results/
+allure-report/
+test-results/
+playwright-report/
+logs/
+*.log
+.env
+package-lock.json
+yarn.lock
+.DS_Store
+coverage/

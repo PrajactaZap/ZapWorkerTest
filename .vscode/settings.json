@@ -1,0 +1,30 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.associations": {
+    "*.feature": "cucumber"
+  },
+  "cucumberautocomplete.steps": [
+    "src/step-definitions/**/*.js"
+  ],
+  "cucumberautocomplete.syncfeatures": "src/features/**/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "cucumberautocomplete.smartSnippets": true,
+  "cucumberautocomplete.stepsInvariants": true,
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/allure-results": true,
+    "**/allure-report": true,
+    "**/test-results": true,
+    "**/logs": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/allure-results": true,
+    "**/allure-report": true,
+    "**/test-results": true
+  }
+}

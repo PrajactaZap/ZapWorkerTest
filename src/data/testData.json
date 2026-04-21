@@ -1,0 +1,55 @@
+{
+  "users": {
+    "createUser": {
+      "name": "John Doe",
+      "job": "Software Engineer"
+    },
+    "updateUser": {
+      "name": "John Doe Updated",
+      "job": "Senior Software Engineer"
+    },
+    "patchUser": {
+      "name": "John Patched"
+    },
+    "createUserVariant1": {
+      "name": "Jane Smith",
+      "job": "Product Manager"
+    },
+    "createUserVariant2": {
+      "name": "Bob Johnson",
+      "job": "QA Engineer"
+    },
+    "createUserVariant3": {
+      "name": "Alice Brown",
+      "job": "DevOps Engineer"
+    }
+  },
+  "authentication": {
+    "validLogin": {
+      "email": "eve.holt@reqres.in",
+      "password": "cityslicka"
+    },
+    "invalidLogin": {
+      "email": "invalid@test.com",
+      "password": "wrongpassword"
+    },
+    "missingPassword": {
+      "email": "eve.holt@reqres.in"
+    },
+    "validRegistration": {
+      "email": "eve.holt@reqres.in",
+      "password": "pistol"
+    },
+    "missingPasswordRegistration": {
+      "email": "sydney@fife"
+    },
+    "missingEmail": {
+      "password": "password123"
+    }
+  },
+  "endpoints": {
+    "users": "/users",
+    "login": "/login",
+    "register": "/register"
+  }
+}
