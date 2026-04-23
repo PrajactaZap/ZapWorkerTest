@@ -52,3 +52,24 @@ Feature: User Authentication
     When I send a POST request to "/register" with the registration data
     Then the response status code should be 400
     And the response should contain "error" field
+
+  @random
+  Scenario: Login with only given credentials
+    Given I have login credentials from "onlyEmail"
+    When I send a POST request to "/login" with the credentials
+    Then the response status code should be 400
+    And the response should contain "error" field 
+
+  @testrandom
+  Scenario: Login with only given password
+    Given I have login credentials from "onlyPassword"
+    When I send a POST request to "/login" with the credentials
+    Then the response status code should be 400
+    And the response should contain "error" field 
+
+  @invalidemailformat
+  Scenario: Login with invalid email format
+    Given I have login credentials from "invalidEmail"
+    When I send a POST request to "/login" with the credentials
+    Then the response status code should be 400
+    And the response should contain "error" field 
