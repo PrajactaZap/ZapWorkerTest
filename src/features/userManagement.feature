@@ -65,3 +65,9 @@ Feature: User Management API
   Scenario: Get user with invalid ID format
     When I send a GET request to "/users/invalid"
     Then the response status code should be 404
+
+  @new
+  Scenario: Delete created user id
+    When I send a DELETE request to the stored user endpoint
+    Then the response status code should be 204 
+    And the response should be empty
