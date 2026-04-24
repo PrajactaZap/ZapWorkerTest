@@ -1,6 +1,6 @@
 # API Automation Framework
 
-Production-ready API automation framework using Playwright, Cucumber BDD, and Allure reporting.
+Enterprise-grade API automation framework with Playwright, Cucumber BDD, and comprehensive Allure reporting.
 
 ## 🚀 Tech Stack
 
