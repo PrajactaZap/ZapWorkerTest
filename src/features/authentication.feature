@@ -73,3 +73,18 @@ Feature: User Authentication
     When I send a POST request to "/login" with the credentials
     Then the response status code should be 400
     And the response should contain "error" field 
+
+  @invalidPasswordFormat
+  Scenario: Login with invalid password format
+    Given I have login credentials from "invalidPassword"
+    When I send a POST request to "/login" with the credentials
+    Then the response status code should be 400
+    And the response should contain "error" field 
+
+  @resetPassword
+  Scenario: Reset password with valid email
+    Given I have reset password data from "validEmail"
+    When I send a POST request to "/reset-password" with the reset password data
+    Then the response status code should be 200
+    And the response should contain "message" field 
+
