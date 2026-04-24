@@ -45,3 +45,10 @@ Feature: API Response Schema Validation
     When I send a POST request to "/login" with the credentials
     Then the response status code should be 401
     And the response should match the "errorResponse" schema
+
+    negative
+  Scenario: Validate error response schema
+    Given I have login credentials from "missingEmail"
+    When I send a POST request to "/login" with the credentials
+    Then the response status code should be 401
+    And the response should match the "errorResponse" schema
