@@ -37,7 +37,7 @@ Feature: User Management API
   @positive
   Scenario: Update an existing user
     Given I have user data from "updateUser"
-    When I send a PUT request to "/users/2" with the user data
+    When I send a PUT request to "/users/1" with the user data
     Then the response status code should be 200
     And the response should contain "name" field
     And the response should contain "job" field
@@ -51,10 +51,10 @@ Feature: User Management API
     And the response should contain "name" field
     And the response should contain "updatedAt" field
 
-  # @positive
-  # Scenario: Delete a user
-  #   When I send a DELETE request to "/users/2"
-  #   Then the response status code should be 204
+  @positive
+  Scenario: Delete a user
+    When I send a DELETE request to "/users/2"
+    Then the response status code should be 204
 
   @negative
   Scenario: Get non-existent user returns 404
@@ -65,3 +65,9 @@ Feature: User Management API
   Scenario: Get user with invalid ID format
     When I send a GET request to "/users/invalid"
     Then the response status code should be 404
+
+  # @new
+  # Scenario: Delete created user id
+  #   When I send a DELETE request to the stored user endpoint
+  #   Then the response status code should be 204 
+  #   And the response should be empty
