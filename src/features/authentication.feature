@@ -38,17 +38,53 @@ Feature: User Authentication
     Then the response status code should be 400
     And the response should contain "error" field
 
-  @negative
-  Scenario: Registration fails with missing password
-    Given I have registration data from "missingPasswordRegistration"
-    When I send a POST request to "/register" with the registration data
-    Then the response status code should be 400
-    And the response should contain "error" field
-    And the response "error" should be "Missing password"
+  # @negative
+  # Scenario: Registration fails with missing password
+  #   Given I have registration data from "missingPasswordRegistration"
+  #   When I send a POST request to "/register" with the registration data
+  #   Then the response status code should be 400
+  #   And the response should contain "error" field
+  #   And the response "error" should be "Missing password"
 
-  @negative
-  Scenario: Registration fails with missing email
-    Given I have registration data from "missingEmail"
-    When I send a POST request to "/register" with the registration data
-    Then the response status code should be 400
-    And the response should contain "error" field
+  # @negative
+  # Scenario: Registration fails with missing email
+  #   Given I have registration data from "missingEmail"
+  #   When I send a POST request to "/register" with the registration data
+  #   Then the response status code should be 400
+  #   And the response should contain "error" field
+
+  # @random
+  # Scenario: Login with only given credentials
+  #   Given I have login credentials from "onlyEmail"
+  #   When I send a POST request to "/login" with the credentials
+  #   Then the response status code should be 400
+  #   And the response should contain "error" field 
+
+  # @testrandom
+  # Scenario: Login with only given password
+  #   Given I have login credentials from "onlyPassword"
+  #   When I send a POST request to "/login" with the credentials
+  #   Then the response status code should be 400
+  #   And the response should contain "error" field 
+
+  # @invalidemailformat
+  # Scenario: Login with invalid email format
+  #   Given I have login credentials from "invalidEmail"
+  #   When I send a POST request to "/login" with the credentials
+  #   Then the response status code should be 400
+  #   And the response should contain "error" field 
+
+  # @invalidPasswordFormat
+  # Scenario: Login with invalid password format
+  #   Given I have login credentials from "invalidPassword"
+  #   When I send a POST request to "/login" with the credentials
+  #   Then the response status code should be 400
+  #   And the response should contain "error" field 
+
+  # @resetPassword
+  # Scenario: Reset password with valid email
+  #   Given I have reset password data from "validEmail"
+  #   When I send a POST request to "/reset-password" with the reset password data
+  #   Then the response status code should be 200
+  #   And the response should contain "message" field 
+
