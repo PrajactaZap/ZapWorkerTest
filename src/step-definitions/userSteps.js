@@ -88,3 +88,40 @@ When('I send a DELETE request to the stored user endpoint', async function () {
   this.response = await userService.deleteUser(userId);
   this.setResponse(this.response);
 });
+
+When('I fetch the user list from page {string}', async function (page) {
+  const userService = new UserService(this.apiClient);
+  this.response = await userService.getUsers(parseInt(page));
+  this.setResponse(this.response);
+  logger.info(`Fetched user list from page ${page}`);
+});
+
+Then('the user list should contain at least {int} users', async function (minCount) {
+  const users = this.response.body.data;
+  const actualCount = users ? users.length : 0;
+  
+  if (actualCount < minCount) {
+    throw new Error(`Expected at least ${minCount} users, but found ${actualCount}`);
+  }
+  
+  logger.info(`User list contains ${actualCount} users (minimum required: ${minCount})`);
+});
+
+Then('each user should have required fields', async function () {
+  const users = this.response.body.data;
+  const requiredFields = ['id', 'email', 'first_name', 'last_name'];
+  
+  if (!users || users.length === 0) {
+    throw new Error('No users found in the response');
+  }
+  
+  users.forEach((user, index) => {
+    requiredFields.forEach(field => {
+      if (!user.hasOwnProperty(field)) {
+        throw new Error(`User at index ${index} is missing required field: ${field}`);
+      }
+    });
+  });
+  
+  logger.info(`All ${users.length} users have required fields: ${requiredFields.join(', ')}`);
+});

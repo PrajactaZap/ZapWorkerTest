@@ -32,3 +32,11 @@ Feature: Complete CRUD Flow with Authentication
     When I send a GET request to "/users/2"
     Then the response status code should be 200
     And the response should contain "data" field
+
+  @dummy @smoke
+  Scenario: Verify user list contains multiple users
+    Given I am logged in with valid credentials
+    When I fetch the user list from page "1"
+    Then the response status code should be 200
+    And the user list should contain at least 3 users
+    And each user should have required fields
