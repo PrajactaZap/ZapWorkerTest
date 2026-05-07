@@ -1,6 +1,6 @@
 # API Automation Framework
 
-Professional API testing framework powered by Playwright, Cucumber BDD, and detailed Allure reports.
+Enterprise-grade API automation framework with Playwright, Cucumber BDD, and comprehensive Allure reporting.
 
 ## 🚀 Tech Stack
 
