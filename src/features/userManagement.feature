@@ -17,10 +17,10 @@ Feature: User Management API
 
   @smoke @positive
   Scenario: Get single user by ID
-    When I send a GET request to "/users/2"
+    When I send a GET request to "/users/1"
     Then the response status code should be 200
     And the response should contain "data" field
-    And the response "data.id" should be 2
+    And the response "data.id" should be 1
     And the response "data.email" should not be empty
     And the response "data.first_name" should not be empty
 
