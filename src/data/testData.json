@@ -45,6 +45,16 @@
     },
     "missingEmail": {
       "password": "password123"
+    },
+    "onlyEmail": {
+      "email": "eve.holt@reqres.in"
+    },
+    "onlyPassword": {
+      "password": "cityslicka"
+    },
+    "invalidEmail": {
+      "email": "invalid-email-format",
+      "password": "password123"
     }
   },
   "endpoints": {
