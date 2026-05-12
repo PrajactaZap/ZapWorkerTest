@@ -38,13 +38,13 @@ Feature: User Authentication
     Then the response status code should be 400
     And the response should contain "error" field
 
-  # @negative
-  # Scenario: Registration fails with missing password
-  #   Given I have registration data from "missingPasswordRegistration"
-  #   When I send a POST request to "/register" with the registration data
-  #   Then the response status code should be 400
-  #   And the response should contain "error" field
-  #   And the response "error" should be "Missing password"
+  @negative
+  Scenario: Registration fails with missing password
+    Given I have registration data from "missingPasswordRegistration"
+    When I send a POST request to "/register" with the registration data
+    Then the response status code should be 400
+    And the response should contain "error" field
+    And the response "error" should be "Missing password"
 
   # @negative
   # Scenario: Registration fails with missing email
